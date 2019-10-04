@@ -1,0 +1,10 @@
+table2
+1: Lesser Nobility -->nobility_lesser
+2: Religious -->religious
+3: Legal/Judicial -->legal
+4-6: Military -->military
+7: Academic -->academic
+8-9: Merchant/Servicer -->merchants
+10-18: Agriculture -->agriculture
+19: Entertainer -->entertainer
+20: Scoundrel/Underclass -->underclass
