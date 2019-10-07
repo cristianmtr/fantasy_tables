@@ -53,5 +53,9 @@ There are three types of supported schemas for the tables:
 3. `table3`. Rolls on the given table names, and provides one final result. Ex.: `npc_rural.table`
 4. `folder_choice`. Gets list of files in folder and picks at random between them. Ex.: `portrait.table`
 
+## Credits
 
+Tables from 
 
+- https://www.enworld.org/threads/list-of-all-personality-traits-ideals-bonds-flaws.469002/
+- https://embyr.obsidianportal.com/wikis/npc-occupations
