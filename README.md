@@ -40,6 +40,10 @@ personality : I'm willing to listen to every side of an argument before I make m
 portrait : /home/cristian/Downloads/Portraits-Portraits-Everywhere/PPE/Portraits/BDVALIS.bmp
 ```
 
+## Portraits folder
+
+The table called `portrait.table` expects you to have a copy of https://github.com/smeagolheart/Portraits-Portraits-Everywhere in the specified location. I'm working on making this flexible.
+
 ## Adding your own tables
 
 There are three types of supported schemas for the tables:
