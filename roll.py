@@ -58,10 +58,22 @@ def handle_table_folder_choice(lines):
 def handle_table1(lines):
     return random.choice(lines)
 
+def handle_table_proc(lines):
+    chances = []
+    entitites = []
+    for l in lines:
+        l_split = l.split("%")
+        chance = int(l_split[0])/100
+        entity = l_split[1]
+        chances.append(chance)
+        entitites.append(entity)
+    return random.choices(entitites, chances)[0]
+
 SCHEMAS = {
     "table": lambda lines: handle_table1(lines), # random choice of lines
     "table2": lambda lines: handle_table2(lines), # chances
     "table3": lambda lines: handle_table3(lines), # subtables
+    "table_proc": lambda lines: handle_table_proc(lines),
     "folder_choice": lambda lines: handle_table_folder_choice(lines) # random file from glob of contents of directory
 }
 
@@ -84,7 +96,7 @@ def main(tables, amount):
     for table_name in tables:
         full_table_file = os.path.join(TABLE_DIR, table_name) + ".table"
         if os.path.exists(full_table_file):
-            lines = [l.strip() for l in open(full_table_file, "r").readlines()]
+            lines = [l.strip() for l in open(full_table_file, "r").readlines() if len(l.strip()) > 0]
             print('='* 10, table_name, '='*10)
             for nr in range(1, amount+1):
                 chosen = handle_table(lines)

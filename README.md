@@ -40,10 +40,6 @@ personality : I'm willing to listen to every side of an argument before I make m
 portrait : /home/cristian/Downloads/Portraits-Portraits-Everywhere/PPE/Portraits/BDVALIS.bmp
 ```
 
-## Portraits folder
-
-The table called `portrait.table` expects you to have a copy of https://github.com/smeagolheart/Portraits-Portraits-Everywhere in the specified location. I'm working on making this flexible.
-
 ## Adding your own tables
 
 There are three types of supported schemas for the tables:
@@ -51,7 +47,7 @@ There are three types of supported schemas for the tables:
 1. `table`. Picks at random from the list provided Ex.: `ideals.table`
 2. `table2`. Picks at random, given distribution of probabilities. Ex.: `jobs_urban.table`
 3. `table3`. Rolls on the given table names, and provides one final result. Ex.: `npc_rural.table`
-4. `folder_choice`. Gets list of files in folder and picks at random between them. Ex.: `portrait.table`
+4. `table_proc`. Choose an option by its percentage chance. Ex.: `races_prime.table`
 
 ## Credits
 
@@ -59,3 +55,6 @@ Tables from
 
 - https://www.enworld.org/threads/list-of-all-personality-traits-ideals-bonds-flaws.469002/
 - https://embyr.obsidianportal.com/wikis/npc-occupations
+- https://forgottenrealms.fandom.com/wiki/Waterdeep
+- https://ynasmidgard.blogspot.com/2016/07/huge-name-list.html
+
