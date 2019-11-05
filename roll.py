@@ -94,7 +94,10 @@ def handle_table(lines):
 
 def main(tables, amount):
     for table_name in tables:
-        full_table_file = os.path.join(TABLE_DIR, table_name) + ".table"
+        if ".table" not in table_name:
+            full_table_file = os.path.join(TABLE_DIR, table_name) + ".table"
+        else:
+            full_table_file = os.path.join(TABLE_DIR, table_name)
         if os.path.exists(full_table_file):
             lines = [l.strip() for l in open(full_table_file, "r").readlines() if len(l.strip()) > 0]
             print('='* 10, table_name, '='*10)
