@@ -57,4 +57,4 @@ Tables from
 - https://embyr.obsidianportal.com/wikis/npc-occupations
 - https://forgottenrealms.fandom.com/wiki/Waterdeep
 - https://ynasmidgard.blogspot.com/2016/07/huge-name-list.html
-
+- https://docs.google.com/document/d/1bnH9HP98V8j7SdkJJJiKopWGJ51tG5XN8Bf_RTnj2RQ/edit
