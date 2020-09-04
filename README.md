@@ -42,12 +42,14 @@ portrait : /home/cristian/Downloads/Portraits-Portraits-Everywhere/PPE/Portraits
 
 ## Adding your own tables
 
-There are three types of supported schemas for the tables:
+There are multiple types of supported schemas for the tables:
 
 1. `table`. Picks at random from the list provided Ex.: `ideals.table`
 2. `table2`. Picks at random, given distribution of probabilities. Ex.: `jobs_urban.table`
 3. `table3`. Rolls on the given table names, and provides one final result. Ex.: `npc_rural.table`
 4. `table_proc`. Choose an option by its percentage chance. Ex.: `races_prime.table`
+
+Simply add a new file with `.table` extension and with the respective header. See the examples mentioned.
 
 ## Credits
 
