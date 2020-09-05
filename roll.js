@@ -1,19 +1,6 @@
-#! /usr/bin/env python;
-var random = require('random');
-var os = require('os');
-var sys = require('sys');
-from collections var OrderedDict = require('OrderedDict');
-from glob var glob = require('glob');
-
-TABLE_DIR = os.path.abspath('.');
-
 SUB_TABLE_PREFIX = '-->';
 
 DEFAULT = 'table';
-
-// if os.path.exists("tables"):
-//     TABLE_DIR = os.path.join(TABLE_DIR, "tables")
-
 
 function d(sides) {
     return random.randint(1, sides);
@@ -22,14 +9,6 @@ function d(sides) {
 function d_roll(n, sides) {
     return sum(tuple(d(sides) for (_ in range(n)));
 }
-
-// def table_exists(table_name):
-//     table_path = os.path.join(TABLE_DIR, table_name + ".table")
-//     if os.path.exists(table_path):
-//         return [l.strip() for l in open(table_path, "r").readlines()]
-
-//     else:
-//         return None
 
 function do_this() {
     return [];
@@ -42,34 +21,39 @@ function handle_table3(lines) {
         if (table_lines) {
             results.push('%s : %s' % (subtable_name, handle_table(table_lines)));
         }
-    return '\n'.join(results);
+        return '\n'.join(results);
     }
 
-function handle_table2(lines) {
-    d = OrderedDict({
-        Number(l.split(':')[0].split('-')[-1]): l.split(':')[1].strip()
+    function handle_table2(lines) {
+        d = OrderedDict({
+            Number(l.split(':')[0].split('-')[-1])
+    :
+        l.split(':')[1].strip()
         for (l in lines
-    });
-    roll = random.randint(1, max(d.keys()));
-    chosen_entity = null;
-    lower_bound = 1;
-    upper_bounds = sorted(list(d.keys()));
-    for (i in range(len(upper_bounds))) {
-        upper_bound = upper_bounds[i];
-        if (roll >= lower_bound && roll <= upper_bound) {
-            chosen_entity = d[upper_bound];
-            break;
+            }
+    )
+        ;
+        roll = random.randint(1, max(d.keys()));
+        chosen_entity = null;
+        lower_bound = 1;
+        upper_bounds = sorted(list(d.keys()));
+        for (i in range(len(upper_bounds))) {
+            upper_bound = upper_bounds[i];
+            if (roll >= lower_bound && roll <= upper_bound) {
+                chosen_entity = d[upper_bound];
+                break;
+            }
+            lower_bound = upper_bound;
         }
-        lower_bound = upper_bound;
+        return chosen_entity;
     }
-    return chosen_entity;
-}
 
 // def handle_table_folder_choice(lines):
 //     choices = glob(os.path.join(lines[0], "*"))
 //     if len(choices) == 0:
 //         return "Folder not found"
 }
+
 //     return handle_table1(choices)
 
 
@@ -93,43 +77,57 @@ function handle_table_proc(lines) {
 function handle_tableroll(lines) {
     roll = lines[0].split(':')[1]  // ex. d8, 2d4
     sides = Number(roll.split('d')[-1]);
-    nr_die = roll.split('d')[0] if (roll.split('d')[0] != 'd' else '1';
+    nr_die = roll.split('d')[0]
+    if (roll.split('d')[0] != 'd' else
+    '1';
     nr_die = Number(nr_die);
     result = d_roll(nr_die, sides) - nr_die;
-    choices = lines[1:];
+    choices = lines[1
+:]
+    ;
     return choices[result];
 
 
-SCHEMAS = {
-    'table': lambda lines: handle_table1(lines),  // random choice of lines
-    'table2': lambda lines: handle_table2(lines),  // chances
-    'table3': lambda lines: handle_table3(lines),  // subtables
-    'tableroll': lambda lines: handle_tableroll(lines),  // subtables
-    'table_proc': lambda lines: handle_table_proc(lines),
-    // "folder_choice": lambda lines: handle_table_folder_choice(lines)  # random file from glob of contents of directory
-};
+    SCHEMAS = {
+        'table': lambda lines: handle_table1(lines),  // random choice of lines
+        'table2': lambda lines: handle_table2(lines),  // chances
+        'table3': lambda lines: handle_table3(lines),  // subtables
+        'tableroll': lambda lines: handle_tableroll(lines),  // subtables
+        'table_proc': lambda lines: handle_table_proc(lines),
+        // "folder_choice": lambda lines: handle_table_folder_choice(lines)  # random file from glob of contents of directory
+    };
 
 
-function handle_table(lines) {
-    schema_line = lines[0];
-    choice = null;
-    if (schema_line in list(SCHEMAS.keys())) {
-        choice = SCHEMAS[schema_line](lines[1:]);
+    function handle_table(lines) {
+        schema_line = lines[0];
+        choice = null;
+        if (schema_line in list(SCHEMAS.keys())) {
+            choice = SCHEMAS[schema_line](lines[1
+        :])
+            ;
+        }
     }
-    } else if (':' in schema_line && 'd' in schema_line) {
+
+else
+    if (':' in schema_line && 'd' in schema_line) {
         choice = SCHEMAS['tableroll'](lines);
-}
-    } else {
-        choice = SCHEMAS[DEFAULT](lines);
-}
-    // perhaps subttable?
-    if (SUB_TABLE_PREFIX in choice && '\n' !in choice) {
-        subtable_lines = table_exists(choice.split(SUB_TABLE_PREFIX)[1]);
-        choice = choice.split(SUB_TABLE_PREFIX)[0];
-        subroll = handle_table(subtable_lines);
-        choice = '%s -- %s' % (choice, subroll);
     }
-    return choice;
+}
+
+else
+{
+    choice = SCHEMAS[DEFAULT](lines);
+}
+// perhaps subttable?
+if (SUB_TABLE_PREFIX in choice && '\n' ! in choice
+)
+{
+    subtable_lines = table_exists(choice.split(SUB_TABLE_PREFIX)[1]);
+    choice = choice.split(SUB_TABLE_PREFIX)[0];
+    subroll = handle_table(subtable_lines);
+    choice = '%s -- %s' % (choice, subroll);
+}
+return choice;
 
 
 // def main(tables, amount, out=True):
