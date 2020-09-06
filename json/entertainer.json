@@ -1,1 +1,16 @@
-{"id": "entertainer", "name": "Entertainer", "roll": ["1) Acrobat", "2) Actor", "3) Clown", "4) Dancer/Acrobat", "5) Fortune-teller", "6) Juggler", "7) Musician/Minstrel/Poet (a \u2018bard\u2019 without the good stuff)", "8) Player -- actor", "9) Prestidigitator -- stage magician", "10) Storyteller"]}
+{
+  "id": "entertainer",
+  "name": "Entertainer",
+  "roll": [
+    "1) Acrobat",
+    "2) Actor",
+    "3) Clown",
+    "4) Dancer/Acrobat",
+    "5) Fortune-teller",
+    "6) Juggler",
+    "7) Musician/Minstrel/Poet (a 'bard' without the good stuff)",
+    "8) Player -- actor",
+    "9) Prestidigitator -- stage magician",
+    "10) Storyteller"
+  ]
+}

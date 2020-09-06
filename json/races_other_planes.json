@@ -1,1 +1,14 @@
-{"id": "races_other_planes", "name": "Races Other Planes", "roll": ["Azers", "Elementals", "Githyanki", "Genies", "Grues", "Mephit", "Salamanders", "Sylphs"]}
+{
+  "id": "races_other_planes",
+  "name": "Races Other Planes",
+  "roll": [
+    "Azers",
+    "Elementals",
+    "Githyanki",
+    "Genies",
+    "Grues",
+    "Mephit",
+    "Salamanders",
+    "Sylphs"
+  ]
+}

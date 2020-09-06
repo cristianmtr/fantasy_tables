@@ -1,1 +1,16 @@
-{"id": "agriculture", "name": "Agriculture", "roll": ["1) Cooper -- a keeper of poultry and fowl", "2) Farmer- a worker of the fields", "3) Falconer -- a hunter who uses trained birds of prey*", "4) Fisherman", "5) Forester", "6) Herdsman- a keeper of livestock", "7) Houndsman -- a keeper of dogs", "8) Hunter", "9) Ostler -- cares for horses", "10) Woodsman"]}
+{
+  "id": "agriculture",
+  "name": "Agriculture",
+  "roll": [
+    "1) Cooper -- a keeper of poultry and fowl",
+    "2) Farmer- a worker of the fields",
+    "3) Falconer -- a hunter who uses trained birds of prey*",
+    "4) Fisherman",
+    "5) Forester",
+    "6) Herdsman- a keeper of livestock",
+    "7) Houndsman -- a keeper of dogs",
+    "8) Hunter",
+    "9) Ostler -- cares for horses",
+    "10) Woodsman"
+  ]
+}

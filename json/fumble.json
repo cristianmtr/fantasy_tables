@@ -1,1 +1,12 @@
-{"id": "fumble", "name": "Fumble", "roll": ["1. Prone. The combatant slips or trips and falls prone.", "2. Disarmed. The combatant drops her weapon. If she is not holding a weapon, she drops any other item held in her hand(s). If she is not holding any items, she becomes entangled (see below) instead.", "3. Entangled. The combatant gets caught up in foliage, furniture, curtains, or even his own backpack. He gains the restrained condition for one round.", "4. Vulnerable. The combatant makes a tactical mistake and places herself in a vulnerable position. All attacks against her gain advantage until the beginning of her next round.", "5. Disoriented. A random blow, or a moment of confusion, effectively stuns the combatant for one round.", "6. Blinded. Whether from blood in his eyes, or a helm falling down over his face - perhaps even a bright light - the combatant is temporarily blinded for one round."]}
+{
+  "id": "fumble",
+  "name": "Fumble",
+  "roll": [
+    "1. Prone. The combatant slips or trips and falls prone.",
+    "2. Disarmed. The combatant drops her weapon. If she is not holding a weapon, she drops any other item held in her hand(s). If she is not holding any items, she becomes entangled (see below) instead.",
+    "3. Entangled. The combatant gets caught up in foliage, furniture, curtains, or even his own backpack. He gains the restrained condition for one round.",
+    "4. Vulnerable. The combatant makes a tactical mistake and places herself in a vulnerable position. All attacks against her gain advantage until the beginning of her next round.",
+    "5. Disoriented. A random blow, or a moment of confusion, effectively stuns the combatant for one round.",
+    "6. Blinded. Whether from blood in his eyes, or a helm falling down over his face - perhaps even a bright light - the combatant is temporarily blinded for one round."
+  ]
+}

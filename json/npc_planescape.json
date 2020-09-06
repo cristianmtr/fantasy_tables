@@ -1,1 +1,11 @@
-{"id": "npc_planescape", "name": "Npc Planescape", "roll": ["planescape_faction", "race_plane_of_origin", "jobs_urban", "flaws", "name"]}
+{
+  "id": "npc_planescape",
+  "name": "Npc Planescape",
+  "roll": [
+    "planescape_faction",
+    "race_plane_of_origin",
+    "jobs_urban",
+    "flaws",
+    "name"
+  ]
+}
