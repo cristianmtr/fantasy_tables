@@ -1,0 +1,14 @@
+{
+  "id": "races_prime",
+  "name": "Races Prime",
+  "roll": [
+    "table_proc",
+    "64% Human",
+    "10% Dwarf",
+    "10% Elf",
+    "6% Halfling",
+    "5% Half-elf",
+    "3% Gnome",
+    "2% Half-orc"
+  ]
+}

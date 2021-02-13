@@ -1,0 +1,14 @@
+{
+  "id": "legal",
+  "name": "Legal",
+  "roll": [
+    "1) Bailiff -- presides over arrests and executions",
+    "2) Chamberlain -- custodian of a royal or high noble residence",
+    "3) Chancellor -- secretary to a king or noble",
+    "4) Constable -- head of peace-keeping law enforcement",
+    "5) Diplomat",
+    "6) Exchequer -- administrator of royal funds",
+    "7) Jailer",
+    "8) Judge"
+  ]
+}

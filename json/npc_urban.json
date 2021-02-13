@@ -1,0 +1,13 @@
+{
+  "id": "npc_urban",
+  "name": "Npc Urban",
+  "roll": [
+    "jobs_urban",
+    "ideals",
+    "goals",
+    "flaws",
+    "personality",
+    "name",
+    "races_prime"
+  ]
+}

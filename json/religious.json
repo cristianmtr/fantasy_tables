@@ -1,0 +1,14 @@
+{
+  "id": "religious",
+  "name": "Religious",
+  "roll": [
+    "1) Beadle -- subordinate with menial duties",
+    "2) Curate -- clergy assistant to the rector",
+    "3) Reeve -- time keeper charged with beginning and ending services",
+    "4) Sexton -- custodian for church property",
+    "5) Theologian",
+    "6) Acolyte -- entry level priest",
+    "7) Ward -- a child who is under the care of the church, oftentimes an orphan",
+    "8) Cleric"
+  ]
+}
