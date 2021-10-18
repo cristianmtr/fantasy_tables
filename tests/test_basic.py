@@ -1,6 +1,6 @@
 from collections import Counter
 import random
-from roll import main
+from ..roll import main
 from itertools import chain
 
 def test_tableroll():
@@ -16,3 +16,11 @@ def test_tableroll():
     assert 7 == hist.get("Lost")
     assert 23 == hist.get("Eating")
     assert 12 == hist.get("Sleeping")
+
+
+def test_subtable():
+    table = "npc_rural"
+    random.seed(1)
+    amount = 1
+    res = [main([table], amount, out=False)][0]
+    assert res[0][0] == "jobs_rural : Military  -- 3) Bodyguard\nideals : Freedom. Everyone should be free to pursue his or her livelihood. (Chaotic)\ngoals : I will become the greatest thief that ever lived.\nflaws : Once I start drinking, it's hard for me to stop.\npersonality : I ask a lot of questions.\nraces_prime :  Human"

@@ -4,9 +4,8 @@ import os
 import sys
 from collections import Counter, OrderedDict
 from glob import glob
-import logging
 
-from utils.log import _setup_logging
+from .utils.log import _setup_logging
 
 
 
@@ -48,7 +47,7 @@ def d_roll(n, sides):
 
 def table_exists(table_name):
     if table_name in TABLES:
-        table_path = f'{table_name}.table'
+        table_path = TABLES.get(table_name)
         return [l.strip() for l in open(table_path, "r").readlines()]
     else:
         return None
