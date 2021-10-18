@@ -66,8 +66,10 @@ Tables from
 - export in Chrome console
 
 ```
-JSON.stringify(menu)
+JSON.stringify(top.entry...)
 ```
 
 - right-click and 'copy as JSON literal'
 - copy - paste into [convert](convert/data.py)
+- run notebook
+- copy from output to your folders
