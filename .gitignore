@@ -1,2 +1,5 @@
 .idea/
 __target__/
+file.log
+**/__pycache__
+*.pyc

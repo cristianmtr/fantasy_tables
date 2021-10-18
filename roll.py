@@ -2,17 +2,40 @@
 import random
 import os
 import sys
-from collections import OrderedDict
+from collections import Counter, OrderedDict
 from glob import glob
+import logging
 
-TABLE_DIR = os.path.abspath(".")
+from utils.log import _setup_logging
 
-SUB_TABLE_PREFIX = "-->"
+
+
+LOG = _setup_logging()
 
 DEFAULT = "table"
 
-if os.path.exists("tables"):
-    TABLE_DIR = os.path.join(TABLE_DIR, "tables")
+SUB_TABLE_PREFIX = "-->"
+
+TABLES = list(glob('**/*.table',recursive=True))
+
+def _prep_tables(tables):
+    individual_file_names = [
+        f.split('.table')[0].split(os.path.sep)[-1]
+        for f in tables
+    ]
+    counters = Counter(individual_file_names)
+    for k,v in counters.items():
+        if v > 1:
+            LOG.error(f'filename {k} appears is not unique!')
+            sys.exit(1)
+    tables = {
+        f.split('.table')[0].split(os.path.sep)[-1]: os.path.abspath(f)
+        for f in tables
+    }
+    LOG.debug(f'### {list(tables.keys())[:3]}')
+    return tables
+
+TABLES = _prep_tables(TABLES)
 
 
 def d(sides):
@@ -24,8 +47,8 @@ def d_roll(n, sides):
 
 
 def table_exists(table_name):
-    table_path = os.path.join(TABLE_DIR, table_name + ".table")
-    if os.path.exists(table_path):
+    if table_name in TABLES:
+        table_path = f'{table_name}.table'
         return [l.strip() for l in open(table_path, "r").readlines()]
     else:
         return None
@@ -37,6 +60,8 @@ def handle_table3(lines):
         table_lines = table_exists(subtable_name)
         if table_lines:
             results.append("%s : %s" % (subtable_name, handle_table(table_lines)))
+        else:
+            print(f'no table with name {subtable_name}')
     return "\n".join(results)
 
 
@@ -122,10 +147,7 @@ def handle_table(lines):
 def main(tables, amount, out=True):
     results = []
     for table_name in tables:
-        if ".table" not in table_name:
-            full_table_file = os.path.join(TABLE_DIR, table_name) + ".table"
-        else:
-            full_table_file = os.path.join(TABLE_DIR, table_name)
+        full_table_file = TABLES.get(table_name)
         if os.path.exists(full_table_file):
             lines = [l.strip() for l in open(full_table_file, "r").readlines() if len(l.strip()) > 0]
             if out:
