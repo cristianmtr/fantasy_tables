@@ -3,3 +3,4 @@ __target__/
 file.log
 **/__pycache__
 *.pyc
+convert/.ipynb_checkpoints/Untitled-checkpoint.ipynb

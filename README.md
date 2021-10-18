@@ -60,3 +60,14 @@ Tables from
 - https://forgottenrealms.fandom.com/wiki/Waterdeep
 - https://ynasmidgard.blogspot.com/2016/07/huge-name-list.html
 - https://docs.google.com/document/d/1bnH9HP98V8j7SdkJJJiKopWGJ51tG5XN8Bf_RTnj2RQ/edit
+
+## Converting from rpg_tables
+
+- export in Chrome console
+
+```
+JSON.stringify(menu)
+```
+
+- right-click and 'copy as JSON literal'
+- copy - paste into [convert](convert/data.py)
