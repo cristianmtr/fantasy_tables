@@ -35,7 +35,9 @@ DEFAULT = "table"
 
 SUB_TABLE_PREFIX = "-->"
 
-TABLES = list(glob('**/*.table',recursive=True))
+CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+
+TABLES = list(glob(f'{CUR_DIR}/**/*.table',recursive=True))
 
 def _prep_tables(tables):
     individual_file_names = [
