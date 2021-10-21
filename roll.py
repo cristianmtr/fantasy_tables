@@ -167,17 +167,20 @@ def main(tables, amount, out=True):
     results = []
     for table_name in tables:
         full_table_file = TABLES.get(table_name)
-        if os.path.exists(full_table_file):
-            lines = [l.strip() for l in open(full_table_file, "r").readlines() if len(l.strip()) > 0]
-            if out:
-                print('=' * 10, table_name, '=' * 10)
-            for nr in range(1, amount + 1):
-                chosen = handle_table(lines)
+        if full_table_file:
+            if os.path.exists(full_table_file):
+                lines = [l.strip() for l in open(full_table_file, "r").readlines() if len(l.strip()) > 0]
                 if out:
-                    print('%s. %s' % (nr, chosen))
-                results.append([chosen])
-            if out:
-                print()
+                    print('=' * 10, table_name, '=' * 10)
+                for nr in range(1, amount + 1):
+                    chosen = handle_table(lines)
+                    if out:
+                        print('%s. %s' % (nr, chosen))
+                    results.append([chosen])
+                if out:
+                    print()
+        else:
+            LOG.error(f'Couldn\'t find table for "{table_name}"')
     return results
 
 
