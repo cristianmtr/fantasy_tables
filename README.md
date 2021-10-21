@@ -73,3 +73,9 @@ JSON.stringify(top.entry...)
 - copy - paste into [convert](convert/data.py)
 - run notebook
 - copy from output to your folders
+
+# TODO
+
+- add `#` comment line with title
+- roll in-line dice, maybe as `--dice: FORMULA`
+

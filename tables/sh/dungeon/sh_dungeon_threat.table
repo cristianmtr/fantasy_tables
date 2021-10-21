@@ -1,0 +1,7 @@
+table2
+1-2: Roll 1d4 twice, subtracting the second die from the first. Add that to the PC’s level to find the Threat, down to a minimum of 1
+3: Talk of its dangers is overblown; the Threat is equal to the PC’s level minus 1, to a minimum of 1
+4: A dangerous power lurks within. The Threat is equal to the PC’s level, but after half the rooms are explored, it jumps by 1d4
+5: They’ll send for help. Your first expedition is at a Threat equal to the PC’s level. Any further expeditions are at Threat + 1d4
+6-10: The danger is roughly as anticipated. The Threat is equal to the PC’s level
+11-12: It’s much worse than you expected in there; the threat is equal to the PC’s level plus 1d4+2
